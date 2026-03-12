@@ -416,6 +416,7 @@ export default function HomePage() {
           clear plan and price.
         </p>
 
+        {/*
         <form
           name="contact"
           method="POST"
@@ -486,6 +487,10 @@ export default function HomePage() {
             Send Message →
           </button>
         </form>
+        */}
+        <a href="mailto:hello@vibestudio.ng">
+        Send us a message →
+        </a>
 
         <div className="pt-4 border-t border-surface-3 space-y-1 text-sm font-body text-text-muted">
           <p>📧 <a href="mailto:hello@vibestudio.ng" className="underline">hello@vibestudio.ng</a></p>
