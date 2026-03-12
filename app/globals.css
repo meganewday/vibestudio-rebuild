@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lime: #C8F53A;
+  --lime-light: #DEFF6E;
+  --lime-dark: #A3CC1E;
+  --black: #0A0A0A;
+  --surface-1: #111111;
+  --surface-2: #1A1A1A;
+  --surface-3: #242424;
+  --white: #F5F2EC;
+}
+
+html { scroll-behavior: smooth; }
+body { background-color: #0A0A0A; color: #F5F2EC; }

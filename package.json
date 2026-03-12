@@ -1,0 +1,38 @@
+{
+  "name": "vibestudio-rebuild",
+  "version": "1.0.0",
+  "description": "Vibe Studio NG marketing site rebuild with Next.js, Tailwind CSS, and MDX blog.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "nextjs",
+    "tailwindcss",
+    "mdx",
+    "marketing-site",
+    "seo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@next/mdx": "latest",
+    "@tailwindcss/typography": "^0.5.19",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "^3.4.19"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "typescript": "latest"
+  }
+}
