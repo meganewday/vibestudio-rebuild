@@ -23,8 +23,11 @@ export default function HomePage() {
     <div className="mx-auto max-w-6xl px-4 py-12 space-y-24">
 
       {/* ── HERO ── */}
-      <section className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start bg-[#00FF00] shadow-[0_0_20px_#00FF00] rounded-lg p-8">
-        <div className="space-y-6 text-black">
+      <section className="relative overflow-hidden rounded-lg p-8 bg-surface-1">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(140,255,74,0.18),_transparent_55%)] blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(140,255,74,0.12),_transparent_65%)] blur-3xl" />
+        <div className="relative grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
+          <div className="space-y-6 text-white">
           <p className="font-label text-xs uppercase tracking-[0.16em] text-text-muted">
             Web Design & MVP Development — Ibadan, Nigeria
           </p>
@@ -50,7 +53,7 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-        <div className="rounded-lg bg-surface-2 border border-surface-3 p-6 space-y-4">
+        <div className="rounded-lg bg-surface-2/60 border border-surface-3 p-6 space-y-4 backdrop-blur">
           <p className="font-label text-xs uppercase tracking-[0.16em] text-text-muted">
             Studio Stats
           </p>
