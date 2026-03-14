@@ -23,7 +23,7 @@ export default function PricingPage() {
         <div className="rounded-lg border border-surface-3 bg-surface-1 p-5 space-y-2">
           <p className="font-display text-lg">MVP Web Apps</p>
           <p className="text-sm text-text-muted font-body">
-            From <span className="text-accent font-display">$500</span> for dashboards,
+            From <span className="text-accent font-display">$800</span> for dashboards,
             booking systems, fintech tools, and SaaS apps.
           </p>
         </div>

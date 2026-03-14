@@ -4,7 +4,7 @@ import { siteConfig } from '@/lib/siteConfig';
 export const metadata: Metadata = {
   title: 'MVP Development Agency in Nigeria | Vibe Studio NG',
   description:
-    'Turn your startup idea into a working MVP in 1–2 weeks from $500. Dashboards, booking systems, fintech tools, SaaS apps — shipped fast by Vibe Studio NG, Ibadan Nigeria.',
+    'Turn your startup idea into a working MVP in 1–2 weeks from $800. Dashboards, booking systems, fintech tools, SaaS apps — shipped fast by Vibe Studio NG, Ibadan Nigeria.',
   alternates: {
     canonical: `${siteConfig.baseUrl}/mvp-development`,
   },
@@ -21,7 +21,7 @@ export default function MvpDevelopmentPage() {
           MVP Development for Nigerian Startups
         </h1>
         <p className="max-w-2xl text-sm text-text-muted font-body">
-          Turn your startup idea into a working MVP in 1–2 weeks from $500. Dashboards,
+          Turn your startup idea into a working MVP in 1–2 weeks from $800. Dashboards,
           booking systems, fintech tools, SaaS apps — shipped fast by Vibe Studio NG,
           Ibadan Nigeria.
         </p>
@@ -77,7 +77,7 @@ export default function MvpDevelopmentPage() {
       <section className="space-y-3">
         <h2 className="font-display text-2xl">Pricing</h2>
         <p className="text-sm text-text-muted font-body">
-          MVPs start from <span className="text-accent font-display">$500</span> for
+          MVPs start from <span className="text-accent font-display">$800</span> for
           web applications. Final pricing depends on features, integrations, and
           timelines.
         </p>
@@ -118,7 +118,7 @@ export default function MvpDevelopmentPage() {
               How much does MVP development cost in Nigeria?
             </p>
             <p>
-              Our MVPs start from $500 for web applications. Price depends on features
+              Our MVPs start from $800 for web applications. Price depends on features
               and complexity.
             </p>
           </div>

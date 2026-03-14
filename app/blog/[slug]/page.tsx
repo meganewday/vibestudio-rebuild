@@ -1,10 +1,22 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { blogPosts, getBlogPostBySlug } from '@/content/blog';
-import type { ComponentType } from 'react';
+import PostWebsiteCost from '../../../content/blog/how-much-does-a-website-cost-in-nigeria.mdx';
+import PostBuildMvp from '../../../content/blog/how-to-build-an-mvp-in-nigeria.mdx';
+import PostWhyBusinessNeedsWebsite from '../../../content/blog/why-your-nigerian-business-needs-a-website.mdx';
+import PostAiAccelerated from '../../../content/blog/what-is-ai-accelerated-web-development.mdx';
+import PostYorubaBilingual from '../../../content/blog/yoruba-english-bilingual-websites.mdx';
 
 type BlogPageProps = {
   params: { slug: string };
+};
+
+const mdxBySlug: Record<string, React.ComponentType<any>> = {
+  'how-much-does-a-website-cost-in-nigeria': PostWebsiteCost,
+  'how-to-build-an-mvp-in-nigeria': PostBuildMvp,
+  'why-your-nigerian-business-needs-a-website': PostWhyBusinessNeedsWebsite,
+  'what-is-ai-accelerated-web-development': PostAiAccelerated,
+  'yoruba-english-bilingual-websites': PostYorubaBilingual,
 };
 
 export function generateStaticParams() {
@@ -21,37 +33,12 @@ export function generateMetadata({ params }: BlogPageProps): Metadata {
   };
 }
 
-async function getPostComponent(
-  slug: string,
-): Promise<{ default: ComponentType<any> } | null> {
-  try {
-    switch (slug) {
-      case 'how-much-does-a-website-cost-in-nigeria':
-        return await import('../../../content/blog/how-much-does-a-website-cost-in-nigeria.mdx');
-      case 'how-to-build-an-mvp-in-nigeria':
-        return await import('../../../content/blog/how-to-build-an-mvp-in-nigeria.mdx');
-      case 'why-your-nigerian-business-needs-a-website':
-        return await import('../../../content/blog/why-your-nigerian-business-needs-a-website.mdx');
-      case 'what-is-ai-accelerated-web-development':
-        return await import('../../../content/blog/what-is-ai-accelerated-web-development.mdx');
-      case 'yoruba-english-bilingual-websites':
-        return await import('../../../content/blog/yoruba-english-bilingual-websites.mdx');
-      default:
-        return null;
-    }
-  } catch {
-    return null;
-  }
-}
-
-export default async function BlogPostPage({ params }: BlogPageProps) {
+export default function BlogPostPage({ params }: BlogPageProps) {
   const post = getBlogPostBySlug(params.slug);
   if (!post) notFound();
 
-  const MDXModule = await getPostComponent(params.slug);
-  if (!MDXModule) notFound();
-
-  const MDXContent = MDXModule.default;
+  const MDXContent = mdxBySlug[params.slug];
+  if (!MDXContent) notFound();
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 space-y-8">

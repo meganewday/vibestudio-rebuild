@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Barlow, Barlow_Condensed } from 'next/font/google';
 import './globals.css';
-import { siteConfig, absoluteUrl } from '@/lib/siteConfig';
+import { siteConfig } from '@/lib/siteConfig';
+import { SiteHeader } from '@/components/site-header';
+import { PwaInstallBanner } from '@/components/pwa-install-banner';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.baseUrl),
+  manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
     url: siteConfig.baseUrl,
@@ -52,26 +55,7 @@ export default function RootLayout({
     >
       <body className="bg-background text-text-primary">
         <div className="min-h-screen flex flex-col">
-          <header className="border-b border-surface-2 bg-background/80 backdrop-blur">
-            <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-              <a href="/" className="font-display text-lg tracking-tight">
-                Vibe<span className="text-accent">.</span>Studio NG
-              </a>
-              <nav className="hidden md:flex gap-6 text-sm font-label uppercase tracking-[0.16em] text-text-muted">
-                <a href="/mvp-development">MVP Dev</a>
-                <a href="/web-design">Web Design</a>
-                <a href="/work">Work</a>
-                <a href="/blog">Blog</a>
-                <a href="/pricing">Pricing</a>
-                <a
-                  href="#contact"
-                  className="rounded-md border border-accent bg-accent/10 px-3 py-1 text-xs text-accent"
-                >
-                  Start a Project
-                </a>
-              </nav>
-            </div>
-          </header>
+          <SiteHeader />
           <main className="flex-1 bg-background">{children}</main>
           <footer className="border-t border-surface-2 bg-background/80">
             <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-text-muted flex flex-col md:flex-row md:items-center md:justify-between gap-3">
@@ -83,6 +67,7 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
+          <PwaInstallBanner />
         </div>
       </body>
     </html>

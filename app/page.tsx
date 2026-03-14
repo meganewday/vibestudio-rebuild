@@ -4,14 +4,14 @@ import { siteConfig } from '@/lib/siteConfig';
 export const metadata: Metadata = {
   title: 'Web Design & MVP Development Agency in Nigeria | Vibe Studio NG',
   description:
-    'Vibe Studio NG builds production-ready MVPs and websites for Nigerian startups — landing pages from $150 in 48hrs, MVPs from $500 in 2 weeks. Based in Ibadan. Remote worldwide.',
+    'Vibe Studio NG builds production-ready MVPs and websites for Nigerian startups — landing pages from $150 in 48hrs, MVPs from $800 in 2 weeks. Based in Ibadan. Remote worldwide.',
   alternates: {
     canonical: siteConfig.baseUrl,
   },
   openGraph: {
     title: 'Web Design & MVP Development Agency in Nigeria | Vibe Studio NG',
     description:
-      'Vibe Studio NG builds production-ready MVPs and websites for Nigerian startups — landing pages from $150 in 48hrs, MVPs from $500 in 2 weeks. Based in Ibadan. Remote worldwide.',
+      'Vibe Studio NG builds production-ready MVPs and websites for Nigerian startups — landing pages from $150 in 48hrs, MVPs from $800 in 2 weeks. Based in Ibadan. Remote worldwide.',
     url: siteConfig.baseUrl,
     type: 'website',
     siteName: siteConfig.name,
@@ -103,7 +103,7 @@ export default function HomePage() {
                 working product fast.
               </p>
             </div>
-            <p className="mt-4 text-xs text-accent">From $500 · 1–2 weeks →</p>
+            <p className="mt-4 text-xs text-accent">From $800 · 1–2 weeks →</p>
           </a>
 
           {/* Landing Pages */}
@@ -222,7 +222,7 @@ export default function HomePage() {
                 mobile-responsive design. Built and deployed to production.
               </p>
             </div>
-            <p className="mt-4 text-xs text-accent">Delivered in 48 hours →</p>
+            <p className="mt-4 text-xs text-accent">Delivered in 5 days →</p>
           </a>
           <a
             href="/work/afro-consult-energy"

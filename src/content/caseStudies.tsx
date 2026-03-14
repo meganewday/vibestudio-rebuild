@@ -15,7 +15,7 @@ export const caseStudies: CaseStudy[] = [
     liveUrl: 'https://realmarhatelier.ng',
     brief:
       'Complete brand showcase with portfolio gallery, booking system, contact forms, and mobile-responsive design.',
-    result: 'Built and deployed to production in 48 hours.',
+    result: 'Delivered in 5 days.',
   },
   {
     slug: 'afro-consult-energy',
