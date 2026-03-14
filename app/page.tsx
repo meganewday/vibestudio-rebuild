@@ -23,8 +23,8 @@ export default function HomePage() {
     <div className="mx-auto max-w-6xl px-4 py-12 space-y-24">
 
       {/* ── HERO ── */}
-      <section className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
-        <div className="space-y-6">
+      <section className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start bg-[#00FF00] shadow-[0_0_20px_#00FF00] rounded-lg p-8">
+        <div className="space-y-6 text-black">
           <p className="font-label text-xs uppercase tracking-[0.16em] text-text-muted">
             Web Design & MVP Development — Ibadan, Nigeria
           </p>
