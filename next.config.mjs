@@ -1,4 +1,5 @@
 import withPWAInit from "@ducanh2912/next-pwa";
+import nextMDX from "@next/mdx";
 
 const withPWA = withPWAInit({
   dest: "public",
@@ -7,10 +8,19 @@ const withPWA = withPWAInit({
   skipWaiting: true,
 });
 
-/** @type {import('next').NextProjectConfig} */
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Your existing config options go here (e.g., reactStrictMode, etc.)
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   reactStrictMode: true,
 };
 
-export default withPWA(nextConfig);
+// Chain them together: MDX first, then PWA
+export default withPWA(withMDX(nextConfig));
