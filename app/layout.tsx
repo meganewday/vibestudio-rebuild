@@ -33,7 +33,8 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.baseUrl),
-  manifest: '/manifest.webmanifest',
+  manifest: '/manifest.json',
+  icon: '/icon.png',
   openGraph: {
     type: 'website',
     url: siteConfig.baseUrl,

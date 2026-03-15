@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/mvp-development/page": "app/mvp-development/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/page": "app/page.js",
+  "/web-design/page": "app/web-design/page.js",
+  "/work/page": "app/work/page.js",
+  "/work/[slug]/page": "app/work/[slug]/page.js"
+}

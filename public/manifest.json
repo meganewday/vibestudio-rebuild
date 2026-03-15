@@ -1,0 +1,16 @@
+{
+  "name": "VibeStudio",
+  "short_name": "VibeStudio",
+  "description": "Vibe Studio NG marketing site rebuild with Next.js, Tailwind CSS, and MDX blog.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

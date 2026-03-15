@@ -24,8 +24,6 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden rounded-lg p-8 bg-surface-1">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(140,255,74,0.18),_transparent_55%)] blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(140,255,74,0.12),_transparent_65%)] blur-3xl" />
         <div className="relative grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] items-start">
           <div className="space-y-6 text-white">
           <p className="font-label text-xs uppercase tracking-[0.16em] text-text-muted">
