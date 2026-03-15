@@ -20,6 +20,7 @@ const withMDX = nextMDX({
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   reactStrictMode: true,
+  turbopack: {},
 };
 
 // Chain them together: MDX first, then PWA
