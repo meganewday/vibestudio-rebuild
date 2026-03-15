@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.baseUrl),
   manifest: '/manifest.json',
-  icon: '/icon.png',
+  icons: '/icon.png',
   openGraph: {
     type: 'website',
     url: siteConfig.baseUrl,
