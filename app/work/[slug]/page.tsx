@@ -4,15 +4,16 @@ import { notFound } from 'next/navigation';
 import { caseStudies, getCaseStudyBySlug } from '@/content/caseStudies';
 
 type CaseStudyPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return caseStudies.map((cs) => ({ slug: cs.slug }));
 }
 
-export function generateMetadata({ params }: CaseStudyPageProps): Metadata {
-  const cs = getCaseStudyBySlug(params.slug);
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const cs = getCaseStudyBySlug(slug);
   if (!cs) return {};
 
   return {
@@ -21,8 +22,9 @@ export function generateMetadata({ params }: CaseStudyPageProps): Metadata {
   };
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const cs = getCaseStudyBySlug(params.slug);
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { slug } = await params;
+  const cs = getCaseStudyBySlug(slug);
   if (!cs) notFound();
 
   const other = caseStudies.find((c) => c.slug !== cs.slug);

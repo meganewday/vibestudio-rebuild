@@ -8,7 +8,7 @@ import PostAiAccelerated from '../../../content/blog/what-is-ai-accelerated-web-
 import PostYorubaBilingual from '../../../content/blog/yoruba-english-bilingual-websites.mdx';
 
 type BlogPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 const mdxBySlug: Record<string, React.ComponentType<any>> = {
@@ -23,8 +23,9 @@ export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: BlogPageProps): Metadata {
-  const post = getBlogPostBySlug(params.slug);
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -33,11 +34,12 @@ export function generateMetadata({ params }: BlogPageProps): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: BlogPageProps) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: BlogPageProps) {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
   if (!post) notFound();
 
-  const MDXContent = mdxBySlug[params.slug];
+  const MDXContent = mdxBySlug[slug];
   if (!MDXContent) notFound();
 
   return (
