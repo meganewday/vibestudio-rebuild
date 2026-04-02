@@ -1,177 +1,105 @@
 import { Space_Grotesk, Barlow } from 'next/font/google';
-import { Check, Circle, X, ArrowRight, Mail, Phone } from 'lucide-react';
-import type { Metadata } from 'next';
 
 const space = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
 const barlow = Barlow({ weight: ['400', '600'], subsets: ['latin'], variable: '--font-barlow' });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Lawal Abdulbasit | Business Systems Specialist | RCIP Canada",
-  description: "Business Systems Specialist relocating via RCIP. Focused on AI-accelerated workflows and rapid MVP development.",
+  description: "Business Systems Specialist relocating via RCIP.",
 };
 
 export default function RCIPPage() {
   return (
-    <main className={`${space.variable} ${barlow.variable} font-barlow bg-black text-warmWhite min-h-screen selection:bg-lime selection:text-black`}>
+    <main className={`${space.variable} ${barlow.variable} font-barlow bg-[#0A0A0A] text-[#F5F2EC] min-h-screen`}>
       
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO */}
       <section className="relative h-screen flex flex-col justify-center px-6 lg:px-24 overflow-hidden">
-        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-lime/20 rounded-full blur-[120px] pointer-events-none" />
-        
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#C8F53A]/20 rounded-full blur-[120px]" />
         <div className="max-w-4xl z-10">
-          <span className="font-space font-bold text-lime tracking-widest text-sm mb-6 block uppercase">
-            NOW ACCEPTING CANADA OPPORTUNITIES
-          </span>
-          <h1 className="font-space text-5xl md:text-7xl font-bold leading-tight mb-8">
-            Business Systems Specialist / <br className="hidden md:block" /> 
-            <span className="text-lime/90">Relocating via RCIP</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-warmWhite/60 max-w-2xl mb-12">
-            I build AI-accelerated workflows that scale operations. Bridging the gap between rural business needs and modern tech stacks.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-lime text-black px-8 py-4 rounded-pill font-space font-bold hover:scale-105 transition-transform">
-              Download Credentials
-            </button>
-            <button className="border border-warmWhite/20 px-8 py-4 rounded-pill font-space font-bold hover:bg-warmWhite/5 transition-colors">
-              View Portfolio
-            </button>
+          <span className="font-space font-bold text-[#C8F53A] tracking-widest text-sm mb-6 block uppercase">NOW ACCEPTING CANADA OPPORTUNITIES</span>
+          <h1 className="font-space text-5xl md:text-7xl font-bold leading-tight mb-8">Business Systems Specialist / <span className="text-[#C8F53A]">Relocating via RCIP</span></h1>
+          <p className="text-xl text-[#F5F2EC]/60 max-w-2xl mb-12">I build AI-accelerated workflows that scale operations. Bridging the gap between rural business needs and modern tech stacks.</p>
+          <div className="flex gap-4">
+            <button className="bg-[#C8F53A] text-black px-8 py-4 rounded-full font-bold">Download Credentials</button>
           </div>
         </div>
       </section>
 
       {/* 2. WHY RURAL CANADA */}
-      <section className="py-96 bg-surface1 px-6 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-space text-4xl font-bold mb-8">Why Rural Canada?</h2>
-          <p className="text-xl text-warmWhite/60 max-w-3xl mb-12">
-            Proven expertise in underserved markets. I don't just build software; I build systems that thrive where infrastructure and talent pools are lean.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {["Business Systems Specialist (NOC 21221)", "Rapid MVP Development", "Bilingual Content Platforms", "Retainer-Based Support"].map((tag) => (
-              <span key={tag} className="px-6 py-2 rounded-pill border border-lime text-lime font-space text-sm font-medium">
-                {tag}
-              </span>
-            ))}
-          </div>
+      <section className="py-24 bg-[#111111] px-6 lg:px-24">
+        <h2 className="font-space text-4xl font-bold mb-8">Why Rural Canada?</h2>
+        <div className="flex flex-wrap gap-3">
+          {["Business Systems Specialist (NOC 21221)", "Rapid MVP Development", "Bilingual Content Platforms", "Retainer-Based Support"].map(tag => (
+            <span key={tag} className="px-4 py-2 rounded-full border border-[#C8F53A] text-[#C8F53A] text-sm">{tag}</span>
+          ))}
         </div>
       </section>
 
       {/* 3. PROCESS */}
-      <section className="py-96 bg-surface2 px-6 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { num: "01", title: "Discovery", desc: "Audit existing workflows and bottleneck ID.", time: "Week 1" },
-              { num: "02", title: "Proposal", desc: "Architecture roadmap and ROI mapping.", time: "Week 2" },
-              { num: "03", title: "Build", desc: "Rapid deployment of AI-integrated systems.", time: "Week 3-6" },
-              { num: "04", title: "Launch", desc: "Onboarding, training, and scaling support.", time: "Week 7+" },
-            ].map((step) => (
-              <div key={step.num} className="flex flex-col">
-                <span className="font-space text-6xl font-bold text-lime/30 mb-6">{step.num}</span>
-                <h3 className="font-space text-2xl font-bold mb-3">{step.title}</h3>
-                <p className="text-warmWhite/60 mb-4">{step.desc}</p>
-                <span className="text-lime text-sm font-bold uppercase tracking-tighter">{step.time}</span>
-              </div>
-            ))}
-          </div>
+      <section className="py-24 bg-[#1A1A1A] px-6 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {[
+            { n: "01", t: "Discovery", d: "Audit workflows." },
+            { n: "02", t: "Proposal", d: "ROI mapping." },
+            { n: "03", t: "Build", d: "AI Integration." },
+            { n: "04", t: "Launch", d: "Scaling support." }
+          ].map(s => (
+            <div key={s.n}><span className="text-5xl font-bold text-[#C8F53A]/30 block mb-4">{s.n}</span><h3 className="text-xl font-bold">{s.t}</h3><p className="text-[#F5F2EC]/60">{s.d}</p></div>
+          ))}
         </div>
       </section>
 
       {/* 4. IMMIGRATION READY */}
-      <section className="py-96 bg-surface1 px-6 lg:px-24">
-        <div className="max-w-4xl mx-auto bg-black p-12 rounded-card border border-warmWhite/5">
-          <h2 className="font-space text-4xl font-bold mb-12">Immigration Readiness</h2>
-          <div className="space-y-6 mb-12">
-            {[
-              { text: "Valid International Passport", icon: <Check className="text-lime" /> },
-              { text: "BSc Quantity Surveying - FUT Minna", icon: <Check className="text-lime" /> },
-              { text: "WES Evaluation (In Progress)", icon: <Circle className="text-yellow-500" /> },
-              { text: "IELTS Scheduled (Q3 2026)", icon: <Circle className="text-yellow-500" /> },
-              { text: "4+ Years Professional Experience", icon: <Check className="text-lime" /> },
-              { text: "Seeking LMIA / RCIP Employer Offer", icon: <ArrowRight className="text-lime" /> },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-4 text-lg">
-                {item.icon}
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
-          <div className="pt-8 border-t border-warmWhite/10">
-            <p className="text-warmWhite/60">Status: <span className="text-lime">Active Candidate</span> | Relocation Window: Late 2026</p>
-          </div>
+      <section className="py-24 bg-[#111111] px-6 lg:px-24">
+        <div className="max-w-2xl bg-black p-10 rounded-xl border border-white/5">
+          <h2 className="text-3xl font-bold mb-8">Immigration Status</h2>
+          <ul className="space-y-4 text-lg">
+            <li>✅ Valid International Passport</li>
+            <li>✅ BSc Quantity Surveying - FUT Minna</li>
+            <li>⏳ WES Evaluation (In Progress)</li>
+            <li>📅 IELTS Scheduled 2026</li>
+            <li>💼 4+ Years Experience</li>
+          </ul>
         </div>
       </section>
 
       {/* 5. TARGET COMMUNITIES */}
-      <section className="py-96 bg-surface2 px-6 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-space text-4xl font-bold mb-12 text-center">Priority RCIP Zones</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-black p-8 rounded-card border-2 border-lime">
-              <h3 className="font-space text-2xl font-bold mb-4">Peace River, BC</h3>
-              <p className="text-warmWhite/60 mb-6">High demand for Technical Analysts and Systems Specialists.</p>
-              <span className="text-xs bg-lime text-black px-3 py-1 rounded-pill font-bold uppercase">Primary Target</span>
-            </div>
-            <div className="bg-black p-8 rounded-card border border-warmWhite/10">
-              <h3 className="font-space text-2xl font-bold mb-4">Pictou County, NS</h3>
-              <p className="text-warmWhite/60 mb-6">Focus on digital transformation for local manufacturing.</p>
-            </div>
-            <div className="bg-black p-8 rounded-card border border-warmWhite/10">
-              <h3 className="font-space text-2xl font-bold mb-4">Brandon, MB</h3>
-              <p className="text-warmWhite/60 mb-6">Agri-tech systems and enterprise resource planning.</p>
-            </div>
+      <section className="py-24 bg-[#1A1A1A] px-6 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-8 bg-black rounded-xl border-2 border-[#C8F53A]">
+            <h3 className="text-xl font-bold mb-2">Peace River, BC</h3>
+            <p className="text-[#F5F2EC]/60">NOC 21221 Priority</p>
+          </div>
+          <div className="p-8 bg-black rounded-xl border border-white/5">
+            <h3 className="text-xl font-bold mb-2">Pictou County, NS</h3>
+            <p className="text-[#F5F2EC]/60">Digital Transformation</p>
+          </div>
+          <div className="p-8 bg-black rounded-xl border border-white/5">
+            <h3 className="text-xl font-bold mb-2">Brandon, MB</h3>
+            <p className="text-[#F5F2EC]/60">Agri-tech Systems</p>
           </div>
         </div>
       </section>
 
       {/* 6. PORTFOLIO */}
-      <section className="py-96 bg-surface1 px-6 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-space text-4xl font-bold mb-12">Selected Infrastructure</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              { name: "VibeStudio.ng", desc: "Creative agency management system.", tech: "Next.js / Supabase" },
-              { name: "OkeogunJobs.com", desc: "Regional employment marketplace.", tech: "React / Node.js" },
-              { name: "Realmarhatelier.ng", desc: "E-commerce for bespoke tailoring.", tech: "Next.js / Stripe" },
-              { name: "AfroConsultEnergy.org", desc: "Energy consultancy data portal.", tech: "Python / Tailwind" },
-            ].map((proj) => (
-              <div key={proj.name} className="group bg-surface2 p-8 rounded-card hover:border-lime/50 border border-transparent transition-all">
-                <h3 className="font-space text-2xl font-bold mb-2 group-hover:text-lime transition-colors">{proj.name}</h3>
-                <p className="text-warmWhite/60 mb-6">{proj.desc}</p>
-                <code className="text-xs text-lime font-mono">{proj.tech}</code>
-              </div>
-            ))}
-          </div>
+      <section className="py-24 bg-[#111111] px-6 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {["VibeStudio.ng", "OkeogunJobs.com", "Realmarhatelier.ng", "AfroConsultEnergy.org"].map(p => (
+            <div key={p} className="p-8 bg-[#1A1A1A] rounded-xl">
+              <h3 className="text-xl font-bold text-[#C8F53A]">{p}</h3>
+              <p className="opacity-60">System Infrastructure & Deployment</p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* 7. CONTACT */}
-      <section className="py-96 bg-black relative overflow-hidden px-6 lg:px-24">
-        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-lime/10 rounded-full blur-[100px] pointer-events-none" />
-        
-        <div className="max-w-4xl mx-auto text-center z-10 relative">
-          <h2 className="font-space text-5xl md:text-6xl font-bold mb-8">Let's Build Your Vision — <span className="text-lime">in Canada</span></h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
-            <a href="mailto:lawalabdulbasit89@gmail.com" className="flex items-center gap-3 text-xl hover:text-lime transition-colors">
-              <Mail className="w-6 h-6" /> lawalabdulbasit89@gmail.com
-            </a>
-            <a href="tel:+2348127862440" className="flex items-center gap-3 text-xl hover:text-lime transition-colors">
-              <Phone className="w-6 h-6" /> +234 812 786 2440
-            </a>
-          </div>
-          <p className="text-warmWhite/40 mb-12 uppercase tracking-widest text-sm">Available for virtual interviews: GMT +1 (EST +5)</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-lime text-black px-10 py-5 rounded-pill font-space font-bold hover:scale-105 transition-transform">
-              Send Partnership Inquiry
-            </button>
-          </div>
-        </div>
+      <section className="py-24 bg-black text-center px-6">
+        <h2 className="text-4xl font-bold mb-6">Let's Build Your Vision — <span className="text-[#C8F53A]">in Canada</span></h2>
+        <p className="mb-4">lawalabdulbasit89@gmail.com</p>
+        <p className="opacity-40 text-sm">Relocation Target: Late 2026</p>
       </section>
 
-      <footer className="py-12 border-t border-warmWhite/5 text-center text-warmWhite/20 text-sm">
-        &copy; 2026 Lawal Abdulbasit. All Rights Reserved. Built for RCIP Pathways.
-      </footer>
     </main>
   );
 }
