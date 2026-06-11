@@ -7,3 +7,18 @@ declare module '*.mdx' {
   export default MDXComponent;
 }
 
+// Allow importing plain CSS/SCSS files as side-effect imports
+declare module '*.css';
+declare module '*.scss';
+
+// CSS modules (named exports as classes)
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
+declare module '*.module.scss' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
