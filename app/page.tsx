@@ -1,5 +1,7 @@
+'use client'
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/siteConfig';
+import { useRouter } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Web Design & MVP Development Agency in Nigeria | Vibe Studio NG',
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const router = useRouter();
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 space-y-24">
 
@@ -429,7 +432,7 @@ export default function HomePage() {
               `Hi Vibe Studio, I'm ${name}. I need: ${service}. ${message}`
             );
             window.open(`https://wa.me/2348127862440?text=${text}`, '_blank');
-            window.location.href = '/thank-you';
+            router.push('/thank-you');
           }}
         >
           <div className="grid gap-4 md:grid-cols-2">
